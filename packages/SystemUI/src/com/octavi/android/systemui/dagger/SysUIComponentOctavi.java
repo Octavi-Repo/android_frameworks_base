@@ -7,6 +7,9 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
+import com.octavi.android.systemui.keyguard.KeyguardSliceProviderOctavi;
+import com.octavi.android.systemui.smartspace.KeyguardSmartspaceController;
+
 import dagger.Subcomponent;
 
 @SysUISingleton
@@ -22,4 +25,12 @@ public interface SysUIComponentOctavi extends SysUIComponent {
     interface Builder extends SysUIComponent.Builder {
         SysUIComponentOctavi build();
     }
+
+    /**
+     * Member injection into the supplied argument.
+     */
+    void inject(KeyguardSliceProviderOctavi keyguardSliceProviderOctavi);
+
+    @SysUISingleton
+    KeyguardSmartspaceController createKeyguardSmartspaceController();
 }
