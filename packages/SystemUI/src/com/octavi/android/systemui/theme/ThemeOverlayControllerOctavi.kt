@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.awaken.android.systemui.theme
+package com.octavi.android.systemui.theme
 
 import android.annotation.ColorInt
 import android.app.WallpaperColors
@@ -55,7 +55,7 @@ import kotlin.math.log10
 import kotlin.math.pow
 
 @SysUISingleton
-class ThemeOverlayControllerAwaken @Inject constructor(
+class ThemeOverlayControllerOctavi @Inject constructor(
     private val context: Context,
     broadcastDispatcher: BroadcastDispatcher,
     @Background bgHandler: Handler,
@@ -190,7 +190,7 @@ class ThemeOverlayControllerAwaken @Inject constructor(
     }
 
     companion object {
-        private const val TAG = "ThemeOverlayControllerAwaken"
+        private const val TAG = "ThemeOverlayControllerOctavi"
         private const val DEBUG = false
 
         private const val PREF_PREFIX = "monet_engine"

@@ -16,8 +16,8 @@ import com.google.android.systemui.smartspace.KeyguardMediaViewController;
 import com.google.android.systemui.smartspace.KeyguardZenAlarmViewController;
 import com.google.android.systemui.smartspace.SmartSpaceController;
 
-import com.awaken.android.systemui.smartspace.KeyguardSmartspaceController;
-import com.awaken.android.systemui.theme.ThemeOverlayControllerAwaken;
+import com.octavi.android.systemui.smartspace.KeyguardSmartspaceController;
+import com.octavi.android.systemui.theme.ThemeOverlayControllerOctavi;
 
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardViewController;
@@ -42,6 +42,7 @@ import com.android.systemui.qs.dagger.QSModule;
 import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.RecentsImplementation;
+import com.android.systemui.settings.UserContentResolverProvider;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.FeatureFlags;
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
@@ -108,7 +109,8 @@ public abstract class SystemUIOctaviModule {
             BroadcastDispatcher broadcastDispatcher,
             DemoModeController demoModeController,
             @Main Handler mainHandler,
-            @Background Handler bgHandler) {
+            @Background Handler bgHandler,
+            UserContentResolverProvider userContentResolverProvider) {
         BatteryController bC = new BatteryControllerImpl(
                 context,
                 enhancedEstimates,
@@ -116,7 +118,8 @@ public abstract class SystemUIOctaviModule {
                 broadcastDispatcher,
                 demoModeController,
                 mainHandler,
-                bgHandler);
+                bgHandler,
+                userContentResolverProvider);
         bC.init();
         return bC;
     }
@@ -205,7 +208,7 @@ public abstract class SystemUIOctaviModule {
     abstract DozeHost provideDozeHost(DozeServiceHost dozeServiceHost);
 
     @Binds
-    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerAwaken themeOverlayController);
+    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerOctavi themeOverlayController);
 
     // Google
     @Provides

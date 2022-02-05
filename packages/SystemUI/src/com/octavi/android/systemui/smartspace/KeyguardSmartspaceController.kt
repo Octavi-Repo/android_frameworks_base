@@ -1,4 +1,4 @@
-package com.awaken.android.systemui.smartspace
+package com.octavi.android.systemui.smartspace
 
 import android.content.ComponentName
 import android.content.Context
@@ -20,7 +20,7 @@ class KeyguardSmartspaceController @Inject constructor(
 ) {
     init {
         if (!featureFlags.isSmartspaceEnabled()) {
-            context.packageManager.setComponentEnabledSetting(ComponentName("com.android.systemui", "com.awaken.android.systemui.keyguard.KeyguardSliceProviderAwaken"), 1, 1)
+            context.packageManager.setComponentEnabledSetting(ComponentName("com.android.systemui", "com.octavi.android.systemui.keyguard.KeyguardSliceProviderOctavi"), 1, 1)
         } else {
             mediaController.init()
             zenController.init()

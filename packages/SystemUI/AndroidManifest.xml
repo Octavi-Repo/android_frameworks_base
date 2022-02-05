@@ -913,7 +913,7 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <provider android:name="com.awaken.android.systemui.keyguard.KeyguardSliceProviderAwaken"
+        <provider android:name="com.octavi.android.systemui.keyguard.KeyguardSliceProviderOctavi"
                   android:authorities="com.android.systemui.keyguard"
                   android:grantUriPermissions="true"
                   android:exported="true">
